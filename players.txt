@@ -1,0 +1,16 @@
+a
+200
+b
+200
+x
+10
+p
+0
+montassar
+0
+abla
+30
+monta
+20
+python -u "c:\Users\HP\Desktop\Python TekUp\DiceBoard.py"
+10

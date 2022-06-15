@@ -1,0 +1,11 @@
+rostom mathlouthi 10.0 19.0 15.4
+montassar riahi 17.0 16.0 16.4
+abla mehrez 17.0 15.0 15.8
+yassine ben hssine 19.0 18.0 18.4
+malak hachicha 19.0 19.0 19.0
+samar  aouadi  18.0 16.0 16.8
+fail  fail 10.0 2.0 5.2
+fail1 fail1 1.0 1.0 1.0
+soulayma  smirani  12.0 19.0 16.200000000000003
+sahar ouali 12.0 10.0 10.8
+rami mharzes 17.0 12.0 14.0

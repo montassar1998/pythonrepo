@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/abc.css' %}" >
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2> My First Django app, not project but appe</h2>
+    <div class="container">
+        <h3>My first app based Django</h3>
+    </div>
+
+    <div class="container">
+        <h3>articles statiques</h3>
+
+        <a href="{% url 'article1' %}" >Article 1</a>
+        <a href="{% url 'article2' %}" >Article 2</a>
+        <a href="{% url 'article3' %}" >Article 3</a>
+        
+    </div>
+    
+    <div class="container">
+        <h3>articles dynamiques</h3>
+        {% for i in listearticle %}
+        <a href="{% url 'htmlArticle' i.id %}">{{i.nom}}</a>
+        {% endfor%}
+    </div>
+    <div class="container">
+        <h3>voir tous les articles</h3>
+        <a href="{% url 'allArticles' %}"> voir tous les articles</a>
+    </div>
+</body>
+</html>

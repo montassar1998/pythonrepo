@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index
+from .views import getBookDetails, index
 
 urlpatterns = [
     path("",index,name="index"), 
-    path("/details",getBookDetails, name="detailsOfBook")
+    path("<int:book_id>",getBookDetails, name="detailsOfBook")
+    
 ]

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,20 @@
     <title>Details of book </title>
 </head>
 <body>
-    
+    <div class="container">
+        {{result}}
+        <p>id = {{result.id}}</p><br>  
+        <p>title = {{result.title}}</p><br>  
+        <p>price = {{result.price}}</p><br>  
+        <p>sumamry = {{result.summary}}</p><br>  
+        <p>category = {{result.category}}</p><br>  
+        <p>stock = {{result.stock}}</p><br>  
+        <p>author id = {{result.author}}</p><br> 
+        <p>author data : </p><br>
+        <p>name = {{Author.firstname}} </p><br>
+        <p>name = {{Author.lastname}} </p><br>
+        <p>name = {{Author.wikipedia}} </p><br>
+    </div>
+    <a href = " {% url 'index' %}"><b>back to the main menu</b></a>
 </body>
 </html>

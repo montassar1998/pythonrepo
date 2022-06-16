@@ -13,6 +13,8 @@ class Author(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     wikipedia = models.URLField(max_length=2049)
+    def __str__(self) :
+        return self.firstname + " " + self.lastname+ " "+self.wikipedia
 
 
 
@@ -37,3 +39,6 @@ class Book(models.Model):
         blank=True
     )
     stock = models.IntegerField(default=0, blank=True)
+
+    def __str__(self):
+        return "abc"

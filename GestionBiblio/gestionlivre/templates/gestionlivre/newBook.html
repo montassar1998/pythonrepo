@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Book Page</title>
+  </head>
+  <body>
+    <form action='proceedToInsertBook'>
+      title <input type="text" name="title" /> <br />
+      price <input type="price" name="price" /> <br />
+      summary <input type="summary" name="summary" /> <br />
+      
+
+      <label for="pet-select">Choose a pet:</label>
+
+<select name="author" >
+    {%for i in AuthorsList%}
+    <option value="{{i.id}}">{{i.firstname}}</option>
+   
+    {% endfor %} 
+    
+</select><br>
+
+      category <input type="category" name="category" /> Aventure, Thriller, Fantastique,
+      Romance, Sciencefiction,<br />
+      stock <input type="stock"  name="stock"/> <br />
+      <a href="{% url 'proceed' %}">ajouter</a>
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

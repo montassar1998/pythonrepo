@@ -14,7 +14,7 @@
       summary <input type="summary" name="summary" /> <br />
       
 
-      <label for="pet-select">Choose a pet:</label>
+      <label for="pet-select">Choose a:</label>
 
 <select name="author" >
     {%for i in AuthorsList%}
@@ -27,7 +27,9 @@
       category <input type="category" name="category" /> Aventure, Thriller, Fantastique,
       Romance, Sciencefiction,<br />
       stock <input type="stock"  name="stock"/> <br />
-      <a href="{% url 'proceed' %}">ajouter</a>
+
+      <!-- this works when we wanna pass the object as a parameter to the view -->
+      <!-- <a href="{% url 'proceed' %}">ajouter</a> -->
       <br />
       <input type="submit" />
     </form>

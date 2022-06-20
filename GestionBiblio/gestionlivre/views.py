@@ -29,6 +29,7 @@ def insertBook(request):
 
 
 def proceedToInsertion(request):
+    #modelForm is easier !!! 
     result = dict()
     result['title'] = request.GET["title"]
     result['price'] = request.GET["price"]
@@ -43,7 +44,7 @@ def proceedToInsertion(request):
     toBeInserted.category = result['category']
     toBeInserted.stock = result['stock']
     #we have the ID of the author, we will now fetch it and copy it 
-    fetchedAuthor = Author.objects.get(pk=int(result['author']))
+    fetchedAuthor = Author.objects.get(pk=(result['author']))
     toBeInserted.author = fetchedAuthor
     toBeInserted.save()
 

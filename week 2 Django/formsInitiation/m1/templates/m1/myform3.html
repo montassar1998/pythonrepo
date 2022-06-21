@@ -17,12 +17,34 @@
       {{ mycontactform3|crispy }}
       <input type="submit" value="submit" /><br />
     </form>
-    <a href="{% url 'listAll' %}">Check the entire list of contacts</a><br>
+    <br />
+    <a href="{% url 'listAll' %}">Check the entire list of contacts</a><br />
     <form action="{% url 'searchByName'%}" method="post">
       {% csrf_token %}
       <!-- as_p : works as a string -->
-      <input type="text" name="searchFor">
-      <input type="submit" value="search by anything ! " ><br />
+      <input type="text" name="searchFor" />
+      <input type="submit" value="search by anything ! " /><br />
     </form>
+    <br />
+    <form action="update" method="post">
+      {% csrf_token %}
+      <!-- as_p : works as a string -->
+      old firstname <input type="text" name="toBeUpdatedCandidateName" />
+      <br />new firsname <input type="text" name="newFirstName" /><br />
+      new lastname <input type="text" name="newLastName" /> <br />
+      new Email<input type="text" name="newEmail" /> <br />
+      new msg <input type="text" name="NewMsg" /><br />
+      <input type="submit" value="Update By Name! " /><br />
+    </form>
+    <br />
+    <form action="{% url 'deleteCand' %}" method="post">
+      {% csrf_token %}
+      <!-- as_p : works as a string -->
+      firstname <input type="text" name="toBeDeletedCandidateName" />
+
+      <input type="submit" value="Delete By Name! " /><br />
+    </form>
+    <br />
+    <br />
   </body>
 </html>

@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import method1, method2, method3, listAllContacts, SearchByName
+from .views import deleteCand, method1, method2, method3, listAllContacts, SearchByName, updateCandByName
 
 urlpatterns = [
     path("m1/", method1),
     path("m2/", method2),
     path("m3/", method3, name = "home"), 
     path("listAlle/", listAllContacts, name="listAll"),
-    path("listByCondition",SearchByName, name="searchByName")
+    path("listByCondition",SearchByName, name="searchByName"),
+    path('m3/delete/', deleteCand, name="deleteCand"),
+    path('m3/<str:oldName>', updateCandByName, name="update"),
+
 ]

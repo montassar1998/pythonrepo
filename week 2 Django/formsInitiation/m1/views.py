@@ -1,5 +1,7 @@
 import imp
 from django import http
+from django.db.models import Q
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Contact
@@ -29,7 +31,6 @@ def method2(request):
 
     if request.method == 'POST':
         form = contactform2(request.POST)
-
         if form.is_valid():
             f = form.cleaned_data['firstname']
             l = form.cleaned_data['lastname']
@@ -61,3 +62,29 @@ def method3(request):
     else:
         form = contactform3()
     return render(request, "m1/myform3.html", {"mycontactform3": form})
+
+
+def listAllContacts(request):
+    print("list all contact")
+    res = Contact.objects.all()
+    return render(request, "m1/listAll.html", {"result": res})
+
+
+def SearchByName(request):
+    print("search by name")
+    criteria = request.POST["searchFor"]
+    print(criteria)
+    #works on only one field , alternative is Q
+    # result = Contact.objects.filter(
+    #     firstname__contains=criteria,
+    #     lastname__contains=criteria,
+    #     Email__contains=criteria,
+    #     msg__contains=criteria)
+    lookups = Q(firstname__icontains=criteria) | Q(
+        lastname__icontains=criteria) | Q(msg__icontains=criteria) | Q(Email__icontains=criteria)
+
+    results = Contact.objects.filter(lookups)
+    #.distinct()
+    context = {'specificFields': results}
+    print(context['specificFields'])
+    return render(request, "m1/selectedFields.html", context)

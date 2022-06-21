@@ -1,17 +1,28 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>method 3</title>
-</head>
-<body>
+  </head>
+  <body>
+    <p>you can insert a new contact here !</p>
+    {% load crispy_forms_tags %}
     <form action="" method="post">
-        {% csrf_token %}
-        {{mycontactform3.as_p}}
-        <input type="submit" value = "submit">
+      {% csrf_token %}
+      <!-- as_p : works as a string -->
+      {{ mycontactform3|crispy }}
+      <input type="submit" value="submit" /><br />
     </form>
-</body>
+    <a href="{% url 'listAll' %}">Check the entire list of contacts</a><br>
+    <form action="{% url 'searchByName'%}" method="post">
+      {% csrf_token %}
+      <!-- as_p : works as a string -->
+      <input type="text" name="searchFor">
+      <input type="submit" value="search by anything ! " ><br />
+    </form>
+  </body>
 </html>

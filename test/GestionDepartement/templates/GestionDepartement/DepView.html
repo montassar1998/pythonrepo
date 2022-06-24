@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+<h3>Department List</h3>
+{% for task in departments %}
+    <p>{{ forloop.counter }}. {{ task.nom }} ---  {{ task.etage }} - {{task.id}} {{ task.get_status_display }}
+        
+    </p>
+{% endfor %}
+
+
+</body>
+</html>

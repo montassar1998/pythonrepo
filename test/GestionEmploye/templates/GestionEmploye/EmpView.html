@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+<h3>Department List</h3>
+{% for task in employe %}
+    <p>{{ forloop.counter }}. {{ task.nom }} ---  {{ task.prenom }} --- {{task.attachedTo}} --- {{task.id}} {{ task.get_status_display }}
+        
+    </p>
+{% endfor %}
+
+</body>
+</html>
